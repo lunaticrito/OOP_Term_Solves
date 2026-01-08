@@ -13,6 +13,7 @@ public:
   }    
 };
 int main(){
-    Base *b= new Derived();
+    Base *b = new Derived();
     delete b;
+    return 0;
 }
