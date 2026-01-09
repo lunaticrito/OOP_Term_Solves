@@ -1,19 +1,19 @@
 #include "Complex.h"
-
-Complex::Complex(double r, double i) {
-    real = r;
-    imag = i;
+Complex::Complex(){
+    real=0;
+    img=0;
 }
-
-Complex Complex::operator+(const Complex& other) const {
-    return Complex(real + other.real, imag + other.imag);
+istream& operator>>(istream &in,Complex &C){
+    in>>C.real>>C.img;
+    return in;
 }
-
-ostream& operator<<(ostream& out, const Complex& c) {
-    out << c.real;
-    if (c.imag >= 0)
-        out << " + " << c.imag << "i";
-    else
-        out << " - " << -c.imag << "i";
+ostream& operator <<(ostream &out, Complex &C){
+    out<<C.real<<"+i"<<C.img;
     return out;
+}
+Complex Complex::operator+(Complex &C){
+    Complex temp;
+    temp.real=real+C.real;
+    temp.img=img+C.img;
+    return temp;
 }
