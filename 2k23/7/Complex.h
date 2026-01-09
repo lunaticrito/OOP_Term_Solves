@@ -1,22 +1,17 @@
 #ifndef COMPLEX_H
 #define COMPLEX_H
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Complex {
-private:
-    double real;
-    double imag;
-
 public:
-    Complex(double r = 0, double i = 0);
-
-    // Operator overloading
-    Complex operator+(const Complex& other) const;
-
-    // Friend function for output
-    friend ostream& operator<<(ostream& out, const Complex& c);
+    int real;
+    int img;
+    Complex();
+    friend istream& operator>>(istream &in,Complex &C);
+    friend ostream& operator <<(ostream &out, Complex &c);
+    Complex operator+(Complex &C);
 };
 
 #endif
