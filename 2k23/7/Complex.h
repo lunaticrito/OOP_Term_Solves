@@ -8,6 +8,7 @@ class Complex {
 public:
     int real;
     int img;
+    
     Complex();
     friend istream& operator>>(istream &in,Complex &C);
     friend ostream& operator <<(ostream &out, Complex &c);
